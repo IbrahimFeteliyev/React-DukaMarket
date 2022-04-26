@@ -1,0 +1,88 @@
+.Aboutservice-section {
+padding-bottom: 30vh;
+    .Aboutservice-container {
+        width: 93%;
+        margin: auto;
+
+        .box {
+
+            .image {
+                position: relative;
+                overflow: hidden;
+                
+
+                &:hover{
+                    img{
+                        transform: scale(1.4);
+                        
+                    }
+                }
+
+                img {
+                    height: 200px;
+                    width: 100%;
+                    transition: 0.3s ease-in-out;
+                }
+
+                .text {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    padding: 30px 40px 30px 40px;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 25px;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                        color: white;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px){
+    .Aboutservice-section {
+        .Aboutservice-container{
+            .box{
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media(min-width: 576px) and (max-width: 768px){
+    .Aboutservice-section {
+        .Aboutservice-container{
+            .box{
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+}
+
+// Large devices (desktops, 992px and up)
+@media(min-width: 768px) and (max-width: 992px){
+    .Aboutservice-section {
+        .Aboutservice-container{
+            width: 85%;
+            .box{
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px){
+
+}

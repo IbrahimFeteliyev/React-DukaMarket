@@ -1,0 +1,110 @@
+.about-section {
+    padding: 50px 0;
+
+    .about-container {
+        width: 93%;
+        margin: auto;
+
+        .about-box {
+            border-right: 2px solid rgb(176, 170, 170);
+            padding: 0 40px;
+            justify-content: space-between;
+
+            .icon {
+                svg {
+                    height: 60px;
+                    width: 60px;
+                }
+            }
+
+            // &:first-child{}
+
+            .text {
+                h6 {
+                    margin-bottom: 5px;
+                    font-size: 14px
+                }
+
+                p {
+                    margin-bottom: 0px;
+                    font-size: 14px;
+                    color: gray;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+
+    
+    // Small devices (landscape phones, 576px and up)
+    @media (max-width: 576px){
+        
+        .about-section{
+            padding: 30px 0;
+
+            .about-container{
+                .about-box{
+                    margin-bottom: 20px;
+                    padding: 0px;
+                    border: none;
+                    justify-content: center;
+                    .text{
+                        margin-left: 25px;
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    // Medium devices (tablets, 768px and up)
+    @media(min-width: 576px) and (max-width: 768px){
+        .about-section{
+            padding: 30px 0;
+
+            .about-container{
+                .about-box{
+                    margin-bottom: 20px;
+                    padding: 0px;
+                    border: none;
+                    justify-content: center;
+                    
+                    .text{
+                        margin-left: 25px;
+                    }
+                    
+                }
+            }
+        }
+    
+    }
+    
+    // Large devices (desktops, 992px and up)
+    @media(min-width: 768px) and (max-width: 992px){
+        .about-section{
+            padding: 30px 0;
+
+            .about-container{
+                .about-box{
+                    margin-bottom: 30px;
+                    padding: 0px;
+                    border: none;
+                    justify-content: center;
+                    
+                    .text{
+                        margin-left: 25px;
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    // Extra large devices (large desktops, 1200px and up)
+    @media (max-width: 1200px){
+    
+    }
