@@ -3,6 +3,7 @@ import '../Header/header.scss'
 import HorizontalSplitIcon from '@mui/icons-material/HorizontalSplit';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { BASE_URL } from '../../api/config'
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
 
@@ -18,16 +19,16 @@ export const Header = () => {
 
 
 
-    const [category, setCategory] = useState([]);
+    const [categories, setCategories] = useState([]);
     const getCategories = async () => {
-        await fetch(BASE_URL + 'products/categories')
-            .then(a => a.json())
-            .then(data => setCategory(data))
-    }
+        await fetch(BASE_URL + "Category/getall")
+            .then((res) => res.json())
+            .then((data) => setCategories(data));
+    };
 
     useEffect(() => {
         getCategories();
-    }, [])
+    }, []);
 
 
 
@@ -61,7 +62,8 @@ export const Header = () => {
                     </div>
                     <div className="right">
                         <ul className='list-unstyled d-flex'>
-                            <li>About Us</li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About Us</Link></li>
                             <li>Order Tracking</li>
                             <li>Contact Us</li>
                             <li>FAQs</li>
@@ -131,9 +133,9 @@ export const Header = () => {
                                         <ul className={`shop-list ${activeDep}`}>
 
                                             {
-                                                category.map(e => (
+                                                categories.map(category => (
                                                     <li key={Math.floor(Math.random() * 1000000000)} className='shop-list-li'>
-                                                        <a className='shop-list-a' href="#">{e}</a>
+                                                        <a className='shop-list-a' href="#">{category.name}</a>
                                                         <ChevronRightIcon />
                                                         <div className="shop-list-dropdown">
                                                             <div className="row">

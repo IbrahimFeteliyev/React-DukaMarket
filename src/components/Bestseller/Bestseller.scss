@@ -1,0 +1,66 @@
+$yellow: #FCBE00;
+
+
+.general{
+    .image{
+        position: relative;
+        .image-div{
+            overflow: hidden;
+            img{
+                transition: 0.3s ease-in-out;
+            }
+        }
+        &:hover{
+            .image-div{
+             img{
+                 transform: scale(1.2);
+             }
+            }
+         
+        }
+ 
+        .text{
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: white;
+            span{
+                font-weight: 500;
+                font-size: 25px;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    color: $yellow ;
+                }
+            }
+        }
+    }
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) { 
+    .general{
+        .image{
+            margin-bottom:40px ;
+        }
+    }
+
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {  
+    .general{
+        .image{
+            margin-bottom:20px ;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {  }

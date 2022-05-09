@@ -1,46 +1,35 @@
-.MySlider{
-    .image{
-        height:500px;
+$base: #263C97;
+$blue: #16BCDC;
+$yellow: #FCBE00;
+$color : #fff;
+
+.mySlider{
+    position: relative;
+    img{
         width: 100%;
-       
+        height: 67vh;
     }
-}
-
-@media (max-width: 576px){
-    .MySlider{
-        .image{
-            height:200px;
-            width: 100%;
-           
+    .deal{
+        position: absolute;
+        top: 20%;
+        h3{
+            font-size: 40px;
         }
-    } 
-    
-}
-
-// Medium devices (tablets, 768px and up)
-@media(min-width: 576px) and (max-width: 768px){
-    .MySlider{
-        .image{
-            height:200px;
-            width: 100%;
-           
+        h6{
+            width: 50%;
+            font-size: 20px;
         }
-    } 
-
-}
-
-// Large devices (desktops, 992px and up)
-@media(min-width: 768px) and (max-width: 992px){
-    .MySlider{
-        .image{
-            height:400px;
-            width: 100%;
-           
+        button{
+            cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.3s ease-in-out;
+            background-color: white;
+            &:hover{
+                background-color: $yellow;
+            }
         }
-    } 
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (max-width: 1200px){
-
+    }
 }

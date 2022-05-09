@@ -1,0 +1,113 @@
+.productdetail {
+    padding: 50px 0;
+
+    .productdetail-container {
+        width: 93%;
+        margin: auto;
+
+        .about-product {
+            h6 {
+                font-size: 24px;
+                color: #0068c9;
+            }
+
+            .review {
+                .stars {
+                    margin-right: 30px;
+
+                    i {
+                        margin-right: 5px;
+                        font-size: 15px;
+                        color: #fcbe00;
+                    }
+                }
+
+
+
+                span {
+                    display: inline-block;
+                    margin-right: 30px;
+                    font-size: 14px;
+                    color: #999;
+                    position: relative;
+
+                    a {
+                        color: #999;
+                        text-decoration: none;
+
+                    }
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        background: #999;
+                        width: 1px;
+                        height: 10px;
+                        left: -15px;
+                        right: 0;
+                        top: 8px;
+                    }
+                }
+
+            }
+
+            .price {
+                display: inline-block;
+                font-size: 24px;
+                line-height: 1.25;
+                color: #222;
+                font-weight: 500;
+                padding-bottom: 20px;
+            }
+
+            .details {
+                ul {
+                    li {
+                        a {
+                            font-size: 14px;
+                            text-decoration: none;
+                            color: #666;
+
+                            i {
+                                font-size: 6px;
+                                position: relative;
+                                top: -4px;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add-to-cart {
+                h5 {
+                    color: #222;
+                    font-weight: 400;
+                    font-size: 14px;
+
+                    span {
+                        color: #16bcdc;
+                        margin-left: 10px;
+                    }
+                }
+                .product_info{
+                    .line{
+                        display: block;
+                        .title{
+                            width: 110px;
+                            display: inline-block;
+                            color: #222;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                        .info{
+                            color: #666;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

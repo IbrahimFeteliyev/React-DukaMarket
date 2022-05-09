@@ -1,0 +1,218 @@
+.footer-section {
+
+    .footer-container {
+        width: 93%;
+        margin: auto;
+    }
+
+    .footer-top {
+        padding: 50px 0;
+        background-color: #2F3037;
+
+
+
+        .footer-top-left {
+            padding-right: 30px;
+
+            .follow-us {
+                color: white;
+                margin-bottom: 15px;
+
+                p {
+                    color: #999;
+                    font-size: 14px;
+                }
+            }
+
+            .icons {
+
+                color: white;
+
+                .icon {
+                    width: 45px;
+                    height: 45px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 10px;
+                    border-radius: 3px;
+                    background-color: inherit;
+                    transition: 0.3s ease;
+
+
+
+                    &.facebook {
+                        background-color: #3b5998;
+
+                        &:hover {
+                            background-color: #fcbe00;
+                            color: #222;
+                        }
+                    }
+
+                    &.twitter {
+                        background-color: #1da1f2;
+
+                        &:hover {
+                            background-color: #fcbe00;
+                            color: #222;
+                        }
+                    }
+
+                    &.youtube {
+                        background-color: #cd201f;
+
+                        &:hover {
+                            background-color: #fcbe00;
+                            color: #222;
+                        }
+                    }
+
+                    &.linkedin {
+                        background-color: #0077b5;
+
+                        &:hover {
+                            background-color: #fcbe00;
+                            color: #222;
+                        }
+                    }
+
+                    &.rss {
+                        background-color: #f26522;
+
+                        &:hover {
+                            background-color: #fcbe00;
+                            color: #222;
+                        }
+                    }
+
+                    &.basketball {
+                        background-color: #ea4c89;
+
+                        &:hover {
+                            background-color: #fcbe00;
+                            color: #222;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        .footer-top-mid {
+            padding-right: 30px;
+
+            .sign-up {
+                color: white;
+                margin-bottom: 15px;
+
+                p {
+                    color: #999;
+                    font-size: 14px;
+                }
+            }
+
+            .input-box {
+                position: relative;
+
+                input {
+                    width: 100%;
+                    height: 45px;
+                    line-height: 41px;
+                    padding-left: 20px;
+                    padding-right: 130px;
+                    color: #222;
+                    background: #ffffff;
+                    border-radius: 3px;
+                    border: 1px solid transparent;
+                    outline: none;
+
+                }
+
+                button {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 45px;
+                    line-height: 45px;
+                    background: #fcbe00;
+                    color: #222;
+                    text-transform: uppercase;
+                    padding: 0 25px;
+                    border: 0;
+                    border-radius: 0 3px 3px 0;
+                    text-align: center;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .footer-top-right {
+            padding-right: 30px;
+
+            .download-app {
+                color: white;
+                margin-bottom: 15px;
+
+                p {
+                    color: #999;
+                    font-size: 14px;
+                }
+            }
+
+            .download-button {
+                width: 90%;
+            }
+
+
+        }
+
+
+
+
+    }
+
+    .footer-mid {
+        background-color: #222;
+        ;
+        padding: 50px 0;
+
+        .footer-mid-left {
+            h4 {
+                font-size: 18px;
+                color: #ffffff;
+                text-transform: capitalize;
+                margin-bottom: 18px;
+                font-weight: 500;
+            }
+
+            ul {
+                li {
+                    margin-bottom: 8px;
+                    color: #999;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .footer-mid-right {
+            h4 {
+                font-size: 18px;
+                color: #ffffff;
+                text-transform: capitalize;
+                margin-bottom: 18px;
+                font-weight: 500;
+            }
+
+            p {
+                color: #999;
+                font-size: 14px;
+            }
+        }
+
+    }
+
+
+}

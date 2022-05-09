@@ -414,17 +414,7 @@ $color: #fff;
 
 
 
-                &::before {
-                    position: absolute;
-                    content: '';
-                    top: 0;
-                    bottom: 0;
-                    right: 40px;
-                    height: 16px;
-                    border-inline-end: 1px solid;
-                    opacity: .2;
-                    margin: auto;
-                }
+                
             }
 
             .mid {
