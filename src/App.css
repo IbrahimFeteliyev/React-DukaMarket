@@ -1,0 +1,103 @@
+.cart{
+    padding: 50px 0;
+
+}
+
+.cart .cart-container{
+    width: 93%;
+    margin: auto;
+}
+.cart .table-cart{
+    background: #ffffff;
+    border-color: #e4e4e4;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    border-width: 1px 0px 0px 1px;
+}
+.table td, .table th {
+    border-top: 1px solid #e4e4e4;
+}
+
+.table-cart thead tr th{
+    border-bottom: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    padding: 10px;
+}
+
+.table-cart tbody tr {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.table-cart tbody tr td{
+    border-right: 1px solid #e4e4e4;
+    padding: 15px 10px;
+}
+
+.cart .table-cart tbody .product-thumbnail img{
+    width: 125px;
+}
+
+.table-cart tbody tr .product-name a{
+text-decoration: none;
+color: black;
+transition: 0.3s;
+}
+.table-cart tbody tr .product-remove i {
+color: black;
+}
+.table-cart tbody tr .product-name a:hover{
+color: gold;
+}
+.cart .buttons{
+    margin-top: 30px;
+}
+.cart .buttons .left-buttons input {
+    height: 50px;
+    border: 2px solid #e4e4e4;
+    padding: 0 15px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.cart .buttons .left-buttons .tp-btn-h1, .tp-btn-h1   {
+    background: #fcbe00;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 11px 40px;
+    text-align: center;
+    text-transform: capitalize;
+    /* touch-action: manipulation; */
+    transition: 0.3s;
+    border: 1px solid transparent;
+    
+}
+
+.cart .buttons .left-buttons button:hover , .tp-btn-h1:hover{
+    background: #ffffff;
+    color: #222;
+    border-color: #fcbe00;
+}
+
+.cart .cart-prices{
+    float: right;
+}
+
+.cart .cart-ul{
+    border-top: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;
+    padding-left: 0px;
+}
+.cart .cart-ul .cart-li{
+    padding: 15px 20px;
+    border-bottom: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+}

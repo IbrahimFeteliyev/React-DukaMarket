@@ -108,9 +108,49 @@ export const Header = () => {
                                     </span>
                                 </div>
                                 <div className="block-cart">
-                                    <i class="flaticon-user"></i>
-                                    <span class="text">Your Cart:
-                                        <span class="sub">$00.00 </span>
+                                    <i class="flaticon-shopping-bag"></i>
+                                    <ul className="dropped-cart list-unstyled">
+                                        <li>
+                                            <div class="cart__title">
+                                                <h4>Your Cart</h4>
+                                                <span>(1 Item in Cart)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="cart__item d-flex justify-content-between align-items-center">
+                                                <div class="cart__inner d-flex">
+                                                    <div class="cart__thumb">
+                                                        <a href="product-details.html">
+                                                            <img src="https://themepure.net/template/dukamarket/dukamarket/assets/img/cart/20.jpg" alt="" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart__details">
+                                                        <h6><a href="product-details.html"> Samsung C49J89: £875, Debenhams Plus  </a></h6>
+                                                        <div class="cart__price">
+                                                            <span>$255.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart__del">
+                                                    <a href="#"><i class="fal fa-times"></i></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="cart__sub d-flex justify-content-between align-items-center">
+                                                <h6>Subtotal</h6>
+                                                <span class="cart__sub-total">$255.00</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="wc-cart"><Link class="cart-link" to="cart">View cart</Link></a>
+                                            <a class="wc-checkout"><Link class="checkout-link" to="checkout">Checkout</Link></a>
+                                        </li>
+
+                                    </ul>
+                                    <span class="text">
+                                        <Link class="link" to="/cart">Your Cart:
+                                        <span class="sub">$00.00 </span></Link>
                                     </span>
                                 </div>
 

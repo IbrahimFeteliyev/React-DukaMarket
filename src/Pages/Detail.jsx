@@ -25,6 +25,7 @@ function Detail() {
         <div>
             <ProductDetail />
             <DetailMain />
+            
 
         </div>
 
