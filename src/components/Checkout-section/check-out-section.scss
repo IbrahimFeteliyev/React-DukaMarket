@@ -1,0 +1,98 @@
+$base: #263C97;
+$blue: #16BCDC;
+$yellow: #FCBE00;
+$color : #fff;
+
+
+#login{
+    .accordion{
+        .item{
+            .title{
+                h6{
+                    background-color: rgb(241, 241, 241);
+                    padding: 15px ;
+                    border-top: 2px solid grey;
+                    cursor: pointer;
+                }
+            }
+            .content{
+                overflow: hidden;
+                max-height: 0;
+                transition: all 0.5s cubic-bezier(0,1,0,1);
+    
+            }
+            .content.show{
+                height: auto;
+                max-height: 9999px;
+                transition: all 0.5s cubic-bezier(1,0,1,0);
+            }
+        }
+        
+
+    }
+}
+
+#box{
+    border: 1px solid rgb(219, 219, 219);
+    padding: 25px;
+    .text{
+        p{
+            font-size: 14px;
+            color: grey;
+        }
+        .pass{
+            width: 100%;
+            border: 1px solid grey;
+            padding: 7px 0px;
+        }
+        .bottom{
+            display: flex;
+            align-items: center;
+            button {
+                // width: 100%;
+                padding: 15px 45px;
+                margin: 10px 10px 10px 0px;
+                text-align: center;
+                border: 1px solid transparent;
+                outline: none;
+                font-weight: 600;
+                transition: 0.3s ease-in-out;
+                background-color: $yellow;
+                color: white;
+               
+                 &:hover {
+                    background-color: transparent;
+                    border: 1px solid rgb(197, 197, 197);
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+#top{
+    margin-bottom: 30px;
+    input {
+        padding: 15px 40px 15px 5px;
+        outline: none;
+        border: 1px solid rgb(198, 198, 198);
+    }
+
+    button {
+        // width: 100%;
+        padding: 15px 45px;
+        margin: 10px 0px;
+        text-align: center;
+        border: 1px solid transparent;
+        outline: none;
+        font-weight: 600;
+        transition: 0.3s ease-in-out;
+        background-color: $yellow;
+        color: white;
+         &:hover {
+            background-color: transparent;
+            border: 1px solid rgb(197, 197, 197);
+            color: black;
+        }
+    }
+}

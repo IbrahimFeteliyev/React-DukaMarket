@@ -101,3 +101,9 @@ color: gold;
     border-bottom: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
 }
+
+.blog-container{
+    width: 93%;
+    margin: auto;
+    padding: 70px 0;
+}

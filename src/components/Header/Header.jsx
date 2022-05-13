@@ -4,6 +4,9 @@ import HorizontalSplitIcon from '@mui/icons-material/HorizontalSplit';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { BASE_URL } from '../../api/config'
 import { Link } from 'react-router-dom';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 export const Header = () => {
 
@@ -94,21 +97,21 @@ export const Header = () => {
                         </div>
                         <div className="col-lg-4 col-12 col-md-5">
                             <div className="header-action d-flex justify-content-between">
-                                <div className="block-userlink">
-                                    <i class="flaticon-user"></i>
+                                <div className="block-userlink d-flex align-items-center">
+                                    <PersonOutlineIcon/>
                                     <span class="text">Login
                                         <span class="sub">My Account </span>
                                     </span>
 
                                 </div>
-                                <div className="block-wishlist">
-                                    <i class="flaticon-user"></i>
+                                <div className="block-wishlist  d-flex justify-content-between">
+                                    <FavoriteBorderIcon/>
                                     <span class="text">Favorite
                                         <span class="sub">My Wishlist </span>
                                     </span>
                                 </div>
-                                <div className="block-cart">
-                                    <i class="flaticon-shopping-bag"></i>
+                                <div className="block-cart  d-flex justify-content-between">
+                                    <ShoppingBagIcon/>
                                     <ul className="dropped-cart list-unstyled">
                                         <li>
                                             <div class="cart__title">
@@ -312,7 +315,7 @@ export const Header = () => {
 
                                         </li>
                                         <li class="blog-i">
-                                            <a class="home-a-i" href="#">Blog<i class="far fa-chevron-down"></i></a>
+                                            <a class="home-a-i" href="#"><Link to="Blog">Blog</Link><i class="far fa-chevron-down"></i></a>
                                             <ul class="list-unstyled dropped-item">
                                                 <li><a href="#">Blog</a></li>
                                                 <li><a href="#">Blog Details</a></li>

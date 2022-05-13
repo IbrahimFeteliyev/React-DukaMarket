@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../api/config';
-import DetailMain from '../components/DetailMain/DetailMain';
 import ProductDetail from '../components/ProductDetail/ProductDetail';
+// import DetailMain from '../components/DetailMain/DetailMain';
 
 function Detail() {
 
@@ -24,7 +24,6 @@ function Detail() {
     return (
         <div>
             <ProductDetail />
-            <DetailMain />
             
 
         </div>

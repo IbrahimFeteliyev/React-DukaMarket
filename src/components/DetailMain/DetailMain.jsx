@@ -2,6 +2,9 @@ import React from 'react'
 import '../DetailMain/detailmain.scss'
 
 function DetailMain() {
+
+    
+
     return (
         <section className="detailmain">
             <div className="detailmain-container">

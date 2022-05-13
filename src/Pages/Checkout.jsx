@@ -4,9 +4,9 @@ import Banner from '../components/Banner/Banner'
 
 function Checkout() {
   return (
-    <>
+    <div>
       <Banner />
-    </>
+    </div>
   )
 }
 

@@ -5,6 +5,7 @@ import Home from '../Pages/Home'
 import Detail from '../Pages/Detail'
 import Cart from '../Pages/Cart'
 import Checkout from '../Pages/Checkout'
+import Blog from '../Pages/Blog'
 
 
 function MyRouter() {
@@ -16,6 +17,7 @@ function MyRouter() {
             <Route path="/detail/:id" element={<Detail/>} />
             <Route path="/cart" element={<Cart/>} />
             <Route path="/checkout" element={<Checkout/>} />
+            <Route path="/blog" element={<Blog/>} />
         </Routes>
     )
 }

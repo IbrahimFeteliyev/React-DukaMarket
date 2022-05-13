@@ -200,6 +200,12 @@ $color: #fff;
             .header-action {
                 padding-left: 50px;
 
+                svg{
+                    height: 35px;
+                    width: 35px;
+                    margin-right: 5px;
+                }
+
                 i {
                     color: white;
                     z-index: 99;
@@ -220,6 +226,7 @@ $color: #fff;
                     .sub {
                         font-size: 15px;
                         display: block;
+                        color: white;
                     }
 
 
