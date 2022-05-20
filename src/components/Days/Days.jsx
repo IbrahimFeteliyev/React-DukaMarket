@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BASE_URL } from '../../api/config';
 import 'swiper/scss';
 import '../Days/Days.scss'
 import 'swiper/scss/navigation';
@@ -8,24 +7,26 @@ import 'swiper/scss/pagination';
 import { Navigation, Scrollbar, A11y } from 'swiper';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Link } from 'react-router-dom';
-
+import { GET } from '../../api/service';
+import { useDispatch, useSelector } from 'react-redux';
+import { daysData } from '../../redux/reducers/daysSlice'
 
 function Days() {
 
+    
 
 
     const [products, setProducts] = useState([]);
     const getProducts = async () => {
-        await fetch(BASE_URL + "Product/productlist")
-            .then((res) => res.json())
-            .then((data) => setProducts(data.message));
+        const product = await GET("product/productlist")
+        setProducts(product.message)
     };
 
     useEffect(() => {
         getProducts();
     }, []);
 
-    
+    console.log(products);
     return (
         <div className='myslider'>
             <div className="products-container">
@@ -74,6 +75,7 @@ function Days() {
                         onSlideChange={() => console.log('slide change')}
                     >
                         {
+                            products &&
                             products.map(product => (
                                 <SwiperSlide key={product.id}>
 

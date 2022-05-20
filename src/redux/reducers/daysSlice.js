@@ -1,18 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit"
+import {
+    createSlice
+} from "@reduxjs/toolkit"
+import {
+    GET
+} from "../../api/service"
 
-export const daysSlice = createSlice ({
-    name:"days",
+export const daysSlice = createSlice({   
+    name: "days",
     initialState: {
         data: []
     },
     reducers: {
-        days: (state, action) => {
-            state.data = action.payload
+        daysData: (state, action) => {
+            const product = GET("product/productlist")
+
+            state.data = product.message
         }
     }
 
 })
 
-export const { days } = daysSlice.actions
+export const { daysData } = daysSlice.actions
 
 export default daysSlice.reducer

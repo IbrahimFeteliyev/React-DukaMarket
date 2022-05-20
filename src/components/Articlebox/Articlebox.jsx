@@ -12,7 +12,11 @@ function Articlebox() {
                     <h6><a href="#">Delicious Mixed Grilled Food For The Weekend With The Family And Friends</a></h6>
                     <span class="author mb-10">posted by <a href="#">Admin</a></span>
                     <p>It is accompanied by a case that can contain up to three different diffusers and can be used for dry storage of loose tea. The perfect way to enjoy brewing tea on fruit to...</p>
+                    <div className="article-date d-flex justify-content-between">
+                        <span>Read More </span>
+                        <span>Post Date: <span className="article-time">January 1, 2022</span></span>
 
+                    </div>
 
 
                 </div>
