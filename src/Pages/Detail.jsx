@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../api/config';
 import ProductDetail from '../components/ProductDetail/ProductDetail';
+import Review from '../components/Review/Review';
 // import DetailMain from '../components/DetailMain/DetailMain';
 
 function Detail() {
@@ -19,12 +20,17 @@ function Detail() {
     //     getDetail()
     // }, [])
 
+    
 
 
     return (
         <div>
             <ProductDetail />
-            
+            {/* <DetailMain /> */}
+            <Review/>
+
+           
+
 
         </div>
 

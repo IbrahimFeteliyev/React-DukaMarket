@@ -4,6 +4,10 @@ import { BASE_URL } from '../../api/config';
 import { useParams } from 'react-router-dom';
 // import { useSelector } from 'react-redux'
 // import { increment, decrement, incrementByAmount, decrementByAmount} from '../features/counterSlice'
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import StarIcon from '@mui/icons-material/Star';
+import StarHalfIcon from '@mui/icons-material/StarHalf';
+
 
 
 function ProductDetail() {
@@ -11,6 +15,11 @@ function ProductDetail() {
   const { id } = useParams()
   const [product, setProducts] = useState([]);
   const [photo, setPhoto] = useState([])
+  const [username, setUserName] = useState('');
+  const [review, setReview] = useState('');
+  const [email, setEmail] = useState('');
+  const [rating, setRating] = useState(0);
+  const [comment, setComments] = useState('')
 
   const getProducts = async () => {
     await fetch(BASE_URL + "Product/getbyid/" + id)
@@ -18,13 +27,50 @@ function ProductDetail() {
       .then((data) => setProducts(data.message));
   };
 
+  const postComment = async () => {
+    fetch(BASE_URL + "Comment/addcomment", {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({
+        "ProductId": 1,
+        "Ratings": 3,
+        "Review": "Rustem Rustem Rustem Rustem",
+        "UserEmail": "Rustem@mail.ru",
+        "UserName": "Rustem",
+      })
+    })
+  }
+
   useEffect(() => {
     getProducts();
   }, []);
 
   // const count = useSelector((state) => state.counter.value)
 
-  console.log(photo);
+  var starCount = product.rating;
+
+  var test = [<StarOutlineIcon />,<StarOutlineIcon />,<StarOutlineIcon />,<StarOutlineIcon />,<StarOutlineIcon />]
+ 
+    for (let index = 0; index < 5; index++) {
+      if (starCount % 1 !== 0) {
+        starCount -= starCount % 1
+      }
+      if (index < starCount) {
+        test[index] = <StarIcon />
+      } else {
+        if (product.rating % 1 ===0 ) {
+          break;
+        }
+        if (index === starCount) {
+          test[index] = <StarHalfIcon/>
+          break;
+        }
+      }
+
+    }
 
 
 
@@ -70,12 +116,16 @@ function ProductDetail() {
               <div className="about-product">
                 <h6>{product.name}</h6>
                 <div className="review d-flex align-items-center">
+
+                  <div className='rating'>
+                    <span style={{ fontSize: 25, fontWeight: 'bold', color: 'gold' }}>{product.rating}</span>
+                  </div>
                   <div className="stars d-flex">
-                    <i class="fal fa-star"></i>
-                    <i class="fal fa-star"></i>
-                    <i class="fal fa-star"></i>
-                    <i class="fal fa-star"></i>
-                    <i class="fal fa-star"></i>
+                    {
+                      test.map(e => (
+                        <span>{e}</span>
+                      ))
+                    }
                   </div>
                   <span>(01 review)</span>
                   <span><a href="#">Add your review</a></span>
@@ -126,20 +176,13 @@ function ProductDetail() {
         </div>
       </section>
 
-      <section className="detailmain">
-                      <div className="container">
-                        <div className="top">
-                          <h5>Description</h5>
-                        </div>
-                      </div>
-
-
-
-
-
-
-        
-        {/* <div className="detailmain-container">
+      {/* <section className="detailmain">
+        <div className="container">
+          <div className="top">
+            <h5>Description</h5>
+          </div>
+        </div>
+        <div className="detailmain-container">
           <div className="top"></div>
           <div className="content">
             <p class="des-text mb-35">Designed by Hans J. Wegner in 1949 as one of the first models created especially for Carl Hansen &amp; Son, and produced since 1950. The last of a series of chairs wegner designed based on inspiration from antique Chinese armchairs. The gently rounded top together with the back and seat offers a variety of comfortable seating positions,ideal for both long visits to the dining table and relaxed lounging.</p>
@@ -184,8 +227,45 @@ function ProductDetail() {
 
 
           </div>
-        </div> */}
-      </section>
+        </div>
+      </section> */}
+
+      <div className="comments">
+        <div className="container">
+          <div className="row">
+            <input className='form-control my-2' type="text" placeholder="Username" required />
+            <input className='form-control my-2' type="email" placeholder="Email" required />
+            <textarea className='form-control my-2' name="" id="" cols="30" rows="10"></textarea>
+
+            <div className="stars d-flex my-2">
+              <i onClick={() => setRating(1)} class="fal fa-star"></i>
+              <i onClick={() => setRating(2)} class="fal fa-star"></i>
+              <i onClick={() => setRating(3)} class="fal fa-star"></i>
+              <i onClick={() => setRating(4)} class="fal fa-star"></i>
+              <i onClick={() => setRating(5)} class="fal fa-star"></i>
+            </div>
+            <span>
+              <button onClick={e => postComment() && setComments(Math.random(0, 10))} className="btn btn-outline-success" >Send</button>
+            </span>
+
+          </div>
+          <div className="row">
+            {
+              product.comments &&
+              product.comments.map(comment => (
+                <div key={comment.userEmail}>
+                  <p>
+                    <p><span>{comment.userName}</span></p>
+                    <p><span>{comment.userEmail} {comment.ratings}</span></p>
+                    <p><span>{comment.review}</span></p>
+                  </p>
+                  <hr />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
 
     </div>
 
