@@ -48,16 +48,17 @@
                         top: 8px;
                     }
 
-                    &:first-child{
-                        &:before{
+                    &:first-child {
+                        &:before {
                             display: none;
                         }
                     }
 
-                    
+
                 }
-                .rating{
-                    span{
+
+                .rating {
+                    span {
                         margin-right: 10px;
                     }
                 }
@@ -103,17 +104,20 @@
                         margin-left: 10px;
                     }
                 }
-                .product_info{
-                    .line{
+
+                .product_info {
+                    .line {
                         display: block;
-                        .title{
+
+                        .title {
                             width: 110px;
                             display: inline-block;
                             color: #222;
                             font-size: 14px;
                             font-weight: 500;
                         }
-                        .info{
+
+                        .info {
                             color: #666;
                             font-size: 13px;
                         }
@@ -125,10 +129,65 @@
     }
 }
 
-.detailmain{
-    .detailmain-container{
+.detailmain {
+    .detailmain-container {
         width: 93%;
         margin: auto;
-        
+
     }
+}
+
+.stars {
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .on {
+        color: gold;
+    }
+
+    .off {
+        color: #ccc;
+    }
+}
+
+.star-ul {
+    margin-top: 20px;
+    li {
+
+        display: flex;
+        align-items: center;
+
+        .process-bar {
+            margin: 0 10px;
+            border-radius: 10px;
+            display: inline-block;
+            height: 13px;
+            width: 300px;
+            background-color: rgb(222, 222, 222);
+            
+
+        }
+        &:first-child{
+            .process-bar{
+            background-color: #ff9300;
+            }
+        }
+    }
+}
+
+.comments{
+    .username{
+        width: 49.5%;
+    }
+    .email{
+        width: 49.5%;
+    }
+}
+
+svg{
+    color: gold;
 }

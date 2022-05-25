@@ -8,9 +8,15 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 
-
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 
 function ProductDetail() {
+
+ 
 
   const { id } = useParams()
   const [product, setProducts] = useState([]);
@@ -20,12 +26,19 @@ function ProductDetail() {
   const [email, setEmail] = useState('');
   const [rating, setRating] = useState(0);
   const [comment, setComments] = useState('')
+  const [hover, setHover] = useState(0);
+  const [value, setValue] = React.useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   const getProducts = async () => {
     await fetch(BASE_URL + "Product/getbyid/" + id)
       .then((res) => res.json())
       .then((data) => setProducts(data.message));
   };
+
 
   const postComment = async () => {
     fetch(BASE_URL + "Comment/addcomment", {
@@ -52,25 +65,25 @@ function ProductDetail() {
 
   var starCount = product.rating;
 
-  var test = [<StarOutlineIcon />,<StarOutlineIcon />,<StarOutlineIcon />,<StarOutlineIcon />,<StarOutlineIcon />]
- 
-    for (let index = 0; index < 5; index++) {
-      if (starCount % 1 !== 0) {
-        starCount -= starCount % 1
-      }
-      if (index < starCount) {
-        test[index] = <StarIcon />
-      } else {
-        if (product.rating % 1 ===0 ) {
-          break;
-        }
-        if (index === starCount) {
-          test[index] = <StarHalfIcon/>
-          break;
-        }
-      }
+  var test = [<StarOutlineIcon />, <StarOutlineIcon />, <StarOutlineIcon />, <StarOutlineIcon />, <StarOutlineIcon />]
 
+  for (let index = 0; index < 5; index++) {
+    if (starCount % 1 !== 0) {
+      starCount -= starCount % 1
     }
+    if (index < starCount) {
+      test[index] = <StarIcon />
+    } else {
+      if (product.rating % 1 === 0) {
+        break;
+      }
+      if (index === starCount) {
+        test[index] = <StarHalfIcon />
+        break;
+      }
+    }
+
+  }
 
 
 
@@ -117,9 +130,7 @@ function ProductDetail() {
                 <h6>{product.name}</h6>
                 <div className="review d-flex align-items-center">
 
-                  <div className='rating'>
-                    <span style={{ fontSize: 25, fontWeight: 'bold', color: 'gold' }}>{product.rating}</span>
-                  </div>
+
                   <div className="stars d-flex">
                     {
                       test.map(e => (
@@ -127,7 +138,7 @@ function ProductDetail() {
                       ))
                     }
                   </div>
-                  <span>(01 review)</span>
+                  <span>{product.reviewCount}</span>
                   <span><a href="#">Add your review</a></span>
                 </div>
                 <span className='price'>{product.price}.00₼</span>
@@ -176,74 +187,72 @@ function ProductDetail() {
         </div>
       </section>
 
-      {/* <section className="detailmain">
-        <div className="container">
-          <div className="top">
-            <h5>Description</h5>
-          </div>
-        </div>
-        <div className="detailmain-container">
-          <div className="top"></div>
-          <div className="content">
-            <p class="des-text mb-35">Designed by Hans J. Wegner in 1949 as one of the first models created especially for Carl Hansen &amp; Son, and produced since 1950. The last of a series of chairs wegner designed based on inspiration from antique Chinese armchairs. The gently rounded top together with the back and seat offers a variety of comfortable seating positions,ideal for both long visits to the dining table and relaxed lounging.</p>
-            <h6 class="des-sm-title">The standard passage, used since the 1500s.</h6>
-            <p class="des-text mb-35">A light chair, easy to move around the dining table and about the room. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="features-des-image text-center">
-              <img src="https://themepure.net/template/dukamarket/dukamarket/assets/img/features-product/product-content-1.jpg" alt="" />
-            </div>
-            <div class="product-des-section mb-90">
-              <h5 class="des-section mb-30">Get 30% Daily Cash
-                <br />  Back with Membership Card.</h5>
-              <p>A new collection of lounge furniture, occasional tables and a stool by Edward Barber &amp; Jay Osgerby offers a relaxed, contemporary attitude toward interior design. The lounge furniture includes four individualized sized sofas, and three complementary ottomans. Available in a range of upholstery fabrics and leathers, the lounge furniture is distinguished by stitched seams that reinforce its architectural profile, softened by the curvature of cushions on each face range of upholstery fabrics and leathers.</p>
-            </div>
-            <div class="row mb-80">
-              <div class="col-lg-6">
-                <div class="des-single mb-30 text-center">
-                  <div class="features-des-image text-center">
-                    <img src="https://themepure.net/template/dukamarket/dukamarket/assets/img/features-product/product-content-2.jpg" alt="" />
-                  </div>
-                  <h5 class="des-section">Get 30% Daily Cash
-                    <br />  Back with Membership Card.</h5>
-                  <p>Sit amet conse ctetur adipisicing elit, sed do <br /> eiusmod tempor incididunt ut labore et dolore  magna aliqua.</p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="des-single text-center mb-30">
-                  <div class="features-des-image">
-                    <img src="https://themepure.net/template/dukamarket/dukamarket/assets/img/features-product/product-content-3.jpg" alt="" />
-                  </div>
-                  <h5 class="des-section text-center">Get 70% Daily Cash
-                    <br />  Back with Membership Card.</h5>
-                  <p>Sit amet conse ctetur adipisicing elit, sed do <br /> eiusmod tempor incididunt ut labore et dolore  magna aliqua.</p>
-                </div>
-              </div>
-            </div>
-            <div class="features-des-image features-des-image-2 text-center mb-50 w-img">
-              <img width={1300} src="https://themepure.net/template/dukamarket/dukamarket/assets/img/features-product/product-content-4.jpg" alt="" />
-            </div>
-            <p class="des-text mb-35">Designed by Puik in 1949 as one of the first models created especially for Carl Hansen &amp; Son, and produced since 1950. The last of a series of chairs wegner designed based on inspiration from antique Chinese armchairs. The gently rounded top together with the back and seat offers a variety of comfortable seating positions,ideal for both long visits to the dining table and relaxed lounging. A light chair easy to move around the dining table and about the room. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-            <h6 class="des-sm-title">Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC.</h6>
-            <p class="des-text mb-25">Sound of Marshall, unplugs the chords, and takes the show on the road. Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
 
-
-          </div>
-        </div>
-      </section> */}
 
       <div className="comments">
         <div className="container">
-          <div className="row">
-            <input className='form-control my-2' type="text" placeholder="Username" required />
-            <input className='form-control my-2' type="email" placeholder="Email" required />
-            <textarea className='form-control my-2' name="" id="" cols="30" rows="10"></textarea>
+          <div className="row align-items-center">
+            <div className="col-lg-5">
+              <div className='rating'>
+                <span style={{ fontSize: 100, fontWeight: 'bold', color: 'green' }}>{product.rating}</span>
+                <span style={{ fontSize: 40, fontWeight: 'bold', color: 'green' }}> / 5</span>
+              </div>
+              <div className="stars d-flex">
+                {
+                  test.map(e => (
+                    <span style={{ color: 'gold' }}>{e}</span>
+                  ))
+                }
+              </div>
+              <ul className="star-ul list-unstyled">
+                <li><span>5 star</span><div className='process-bar'></div><span>100%</span></li>
+                <li><span>4 star</span><div className='process-bar'></div><span>0%</span></li>
+                <li><span>3 star</span><div className='process-bar'></div><span>0%</span></li>
+                <li><span>2 star</span><div className='process-bar'></div><span>0%</span></li>
+                <li><span>1 star</span><div className='process-bar'></div><span>0%</span></li>
+              </ul>
+            </div>
 
-            <div className="stars d-flex my-2">
-              <i onClick={() => setRating(1)} class="fal fa-star"></i>
+            <div className="col-lg-7">
+              <h3>
+                {product.reviewCount} review for <span>{product.name}</span></h3>
+            </div>
+          </div>
+          <div className="row justify-content-between">
+            <h5>ADD A REVIEW</h5>
+            <span>Your email address will not be published. Required fields are marked *</span>
+            <input className='username form-control my-2' type="text" placeholder="Username" required />
+            <input className='email form-control my-2' type="email" placeholder="Email" required />
+            <div className="d-flex align-items-center">
+              <span>Your rating *</span>
+              <div className="stars d-flex my-2">
+                {[...Array(5)].map((star, index) => {
+                  index += 1;
+                  return (
+                    <button
+                      type="button"
+                      key={index}
+                      className={index <= (hover || rating) ? "on" : "off"}
+                      onClick={() => setRating(index)}
+                      onMouseEnter={() => setHover(index)}
+                      onMouseLeave={() => setHover(rating)}
+                    >
+                      <span className="star"><i class="fal fa-star"></i></span>
+                    </button>
+                  );
+                })}
+                {/* <i onClick={() => setRating(1)} class="fal fa-star"></i>
               <i onClick={() => setRating(2)} class="fal fa-star"></i>
               <i onClick={() => setRating(3)} class="fal fa-star"></i>
               <i onClick={() => setRating(4)} class="fal fa-star"></i>
-              <i onClick={() => setRating(5)} class="fal fa-star"></i>
+              <i onClick={() => setRating(5)} class="fal fa-star"></i> */}
+              </div>
             </div>
+            <span>Your review *</span>
+            <textarea className='form-control my-2' name="" id="" cols="30" rows="10"></textarea>
+
+
+
             <span>
               <button onClick={e => postComment() && setComments(Math.random(0, 10))} className="btn btn-outline-success" >Send</button>
             </span>
@@ -254,6 +263,7 @@ function ProductDetail() {
               product.comments &&
               product.comments.map(comment => (
                 <div key={comment.userEmail}>
+                  <h4></h4>
                   <p>
                     <p><span>{comment.userName}</span></p>
                     <p><span>{comment.userEmail} {comment.ratings}</span></p>
@@ -267,7 +277,25 @@ function ProductDetail() {
         </div>
       </div>
 
+
+      <Box sx={{ width: '100%', typography: 'body1' }}>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Item One" value="1" />
+            <Tab label="Item Two" value="2" />
+            <Tab label="Item Three" value="3" />
+          </TabList>
+        </Box>
+        <TabPanel value="1">Item One</TabPanel>
+        <TabPanel value="2">Item Two</TabPanel>
+        <TabPanel value="3">Item Three</TabPanel>
+      </TabContext>
+    </Box>
+
+
     </div>
+
 
   )
 }
